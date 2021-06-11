@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var num = prompt("몇 학년인가요?", "");
-        var grade = prompt("중간고사 시험 점수는?", "");
+        var grade = prompt("몇 학년인가요?", "");
+        var score = prompt("중간고사 시험 점수는?", "");
+        vaer msg= "에러입니다.";
 
+    if(0 <= score && score <= 100)
     if(num == 4) {
      if(grade >= 70) { 
          document.write("합격");
