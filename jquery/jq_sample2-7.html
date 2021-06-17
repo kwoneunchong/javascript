@@ -12,7 +12,6 @@
         <li>내용1-1</li>
         <li>내용1-2</li>
         <li>내용1-3</li>
-        <li>내용1-4</li>
     </ul>
     <ul id="menu2">
         <li>내용2-1</li>
@@ -26,19 +25,29 @@
 
     <script>
         $(function() {
-            $("#menu1 li:nth-child(1)")
-            .css({
-                "background-color":"#ff0"
+            var obj=[{
+                "area":"서울"
+            },{
+                "area":"부산"
+            },{
+                "area":"전주"
+            }]
+
+            $(obj).each(function(i,o) {
+                console.log(i+":",o);
             });
-            $("#menu1 li:nth-child(2n)")
-            .css({
-                "border":"2px dashed #f00"
+            console.log("=========end1========");
+
+            $each($("menu2 li"), function(i,o) {
+                console.log(i+":"o);
             });
-            $("#menu2 li:nth-last-child(2)")
-            .css({
-                "background-color":"#0ff"
+
+            console.log("=========end2=========");
+            $each($("menu2 li"), function(i) {
+                console.log(i+":",$(this));
             });
         });
+
     </script>
 </body>
 </html>
