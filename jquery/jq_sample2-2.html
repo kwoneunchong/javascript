@@ -7,24 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>인접 관계 선택자</h1>
-    <ul id="wrap">
-        <li>리스트1
-            <ul>
-                <li id="list_1">리스트1-1</li>
-                <li>리스트1-2</li>
-            </ul>
-        </li>
-        <li>리스트2</li>
-        <li>리스트3</li>
+    <h1>탐색 선택자</h1>
+    <ul id="menu">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+        <li>내용4</li>
     </ul>
+
     <script src="jquery-3.6.0.js"></script>
     <!-- <script src="jquery-3.6.0.min.js"></script> -->
+
     <script>
         $(function() {
-        $("#list_1").parent()
-            .css("border", "2px solid #f00");
+            $("#menu li:even")
+            .css({
+                "background-color":"#f00"
+            });
+        $("#menu li:odd")
+            .css({"background-color":"#0ff"});
         });
-        </script>
+    </script>
 </body>
 </html>
