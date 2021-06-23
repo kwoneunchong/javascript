@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            width: 400px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="../jquery-3.6.0.js"></script>
+    <!-- <script src="jquery-3.6.0.min.js"></script> -->
+
+    <script>
+        $(function() {
+            $(".btn2").hide();
+            $(".btn1").on("click", function() {
+                $(".box").slideUp(1000,"linear",
+                function() {
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                });
+            });
+
+            $(".btn2").on("click",function(){
+                $(".box").fadeIn(1000,"swing",
+                function(){
+                    $(".btn2").hide();
+                    $(".btn1").show();
+                });
+            });
+
+            $(".btn3").on("click",function() {
+                $(".box").slideToggle(1000,"linear");
+            });
+            $(".btn4").on("click",function(){
+                $(".box").fadeTo("fast",0.3);
+            });
+            $(".btn5").on("click",function(){
+                $(".box").fadeTo("fast",1);
+            });
+        });
+    </script>
+    <p>
+        <botton class="btn1">slideUp</botton>
+        <botton class="btn2">fadeIn</botton>
+    </p>
+    <p>
+        <botton class="btn3">toggleslide</botton>
+    </p>
+    <botton class="btn4">fadeto(0.3)</botton>
+    <botton class="btn5">fadeto(1)</botton>
+    </p>
+    <div class="box">
+        <div class="content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam eum possimus distinctio voluptate? Magni, sapiente nobis? Omnis ex temporibus deserunt pariatur odio iure asperiores nisi, odit amet repudiandae accusamus exercitationem?
+        </div>
+    </div>
+</body>
+
+</body>
+</html>
